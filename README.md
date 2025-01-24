@@ -1,4 +1,6 @@
-# Dynamic Inventory Management Table  [Live Preview](https://dynamic-inventory-management.vercel.app/)
+# Dynamic Inventory Management Table
+
+### [Live Preview](https://dynamic-inventory-management.vercel.app/)
 
 Build a simple inventory management app using React.js. The app should display a table of items in stock and allow users to:
 - Add new items to the inventory.
