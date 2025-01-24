@@ -76,7 +76,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-3">
+    <div className="min-h-screen bg-gray-100 py-3 mb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex justify-between items-center mb-6">
