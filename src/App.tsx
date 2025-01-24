@@ -4,6 +4,11 @@ import InventoryTable from "./components/InventoryTable";
 import { ItemForm } from "./components/ItemForm";
 import { initialItems } from "./mock-data";
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import {
+  ArrowTopRightOnSquareIcon,
+  LinkIcon,
+} from "@heroicons/react/24/outline";
+import { LinkSlashIcon } from "@heroicons/react/24/outline";
 
 function App() {
   // const [items, setItems] = useState<InventoryItem[]>(initialItems);
@@ -80,7 +85,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div className="min-h-screen bg-gray-100 py-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex justify-between items-center mb-6">
@@ -158,6 +163,38 @@ function App() {
         <p className="bg-yellow-200 text-center py-1 mt-2 rounded">
           I have used some mock data to display for initial page load
         </p>
+      </div>
+      <div className="fixed w-full bottom-0 bg-white">
+        <div className="max-w-7xl mx-auto ">
+          <div className="flex items-center justify-between gap-3 px-3 py-2">
+            <h2 className="text-gray-600">
+              Designed by <strong>Mausam Giri</strong>
+            </h2>
+            <div className="flex gap-3 items-center">
+              <a
+                href="https://mausamgiri.vercel.app"
+                className="flex gap-2 items-center text-blue-700 font-medium"
+              >
+                <span>Portfolio</span>
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+              </a>
+              <a
+                href="https://github.com/mausam-giri"
+                className="flex gap-2 items-center text-blue-700 font-medium"
+              >
+                <span>Github</span>
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/mausamgiri"
+                className="flex gap-2 items-center text-blue-700 font-medium"
+              >
+                <span>Linkedin</span>
+                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
