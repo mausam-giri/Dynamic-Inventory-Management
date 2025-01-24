@@ -4,11 +4,7 @@ import InventoryTable from "./components/InventoryTable";
 import { ItemForm } from "./components/ItemForm";
 import { initialItems } from "./mock-data";
 import { useLocalStorage } from "./hooks/useLocalStorage";
-import {
-  ArrowTopRightOnSquareIcon,
-  LinkIcon,
-} from "@heroicons/react/24/outline";
-import { LinkSlashIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 function App() {
   // const [items, setItems] = useState<InventoryItem[]>(initialItems);
