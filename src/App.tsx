@@ -7,7 +7,6 @@ import { useLocalStorage } from "./hooks/useLocalStorage";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 function App() {
-  // const [items, setItems] = useState<InventoryItem[]>(initialItems);
   const {
     storedValue: items,
     setValue,
@@ -24,37 +23,33 @@ function App() {
     [items]
   );
 
-  const filterItem = useCallback(
-    (
-      items: InventoryItem[],
-      selectedCategory: string,
-      sortDirection: string
-    ) => {
-      return items
-        .filter(
-          (item) => !selectedCategory || item.category === selectedCategory
-        )
-        .sort((a, b) => {
-          const modifier = sortDirection === "asc" ? 1 : -1;
-          return (a.quantity - b.quantity) * modifier;
-        });
-    },
-    []
-  );
+  const filterItem = (
+    items: InventoryItem[],
+    selectedCategory: string,
+    sortDirection: string
+  ) => {
+    return items
+      .filter((item) => !selectedCategory || item.category === selectedCategory)
+      .sort((a, b) => {
+        const modifier = sortDirection === "asc" ? 1 : -1;
+        return (a.quantity - b.quantity) * modifier;
+      });
+  };
 
   const filteredItems = useMemo(
     () => filterItem(items, selectedCategory, sortDirection),
     [items, selectedCategory, sortDirection]
   );
 
-  const handleAddItem = useCallback((newItem: Omit<InventoryItem, "id">) => {
+  const handleAddItem = (newItem: Omit<InventoryItem, "id">) => {
     const item: InventoryItem = {
       ...newItem,
       id: Date.now().toString(),
     };
+    console.log(items);
     setValue([...items, item]);
     setIsFormOpen(false);
-  }, []);
+  };
 
   const handleEditItem = useCallback(
     (updatedItem: Omit<InventoryItem, "id">) => {
